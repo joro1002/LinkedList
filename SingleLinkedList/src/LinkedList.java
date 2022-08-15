@@ -46,29 +46,20 @@ public class LinkedList<T> implements Iterable<T> {
         if (index == 0) {
             newNode.next = head;
             head = newNode;
-
         } else {
-            Node<T> current = head;
-            Node<T> prev = null;
+            Node<T> temp = head;
 
-            int currentCount = 0;
-            while (currentCount < index) {
-                prev = current;
-                current = current.next;
-                currentCount++;
+            for (int i = 0; i < index - 1; i++) {
+                temp = temp.next;
             }
-
-            if (prev != null) {
-                prev.next = newNode;
-            }
-
-            newNode.next = current;
+            newNode.next = temp.next;
+            temp.next = newNode;
         }
         count++;
     }
 
     public T removeFirstElement() {
-        listIsEmpty();
+        checkListIsEmpty();
 
         T temp = head.data;
         head = head.next;
@@ -78,7 +69,7 @@ public class LinkedList<T> implements Iterable<T> {
     }
 
     public T removeLastElement() {
-        listIsEmpty();
+        checkListIsEmpty();
         T old;
         if (head.next == null) {
             old = removeFirstElement();
@@ -95,8 +86,8 @@ public class LinkedList<T> implements Iterable<T> {
     }
 
     public T removeOnSpecificIndex(int index) {
-        listIsEmpty();
         incorrectIndex(index);
+        checkListIsEmpty();
         T old;
 
         if (index == 0) {
@@ -112,7 +103,7 @@ public class LinkedList<T> implements Iterable<T> {
             }
             Node<T> current = temp.next;
             temp.next = current.next;
-            old = current.next.data;
+            old = current.data;
             count--;
         }
 
@@ -149,7 +140,7 @@ public class LinkedList<T> implements Iterable<T> {
         }
     }
 
-    public void listIsEmpty() {
+    public void checkListIsEmpty() {
         if (count == 0) {
             throw new IndexOutOfBoundsException("List is empty");
         }

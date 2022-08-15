@@ -76,6 +76,23 @@ public class Main {
         int removeOnSpecificIndex2 = list.removeOnSpecificIndex(2);
         list.set(0, 9);
         list.addElementOnIndex(0, 44);
+        list.addEnd(1);
+        list.addEnd(2);
+        list.addEnd(3);
+        list.addEnd(4);
+        list.addEnd(5);
+        int removeOnIndex7 = list.removeOnSpecificIndex(4);
+        int removeOnIndex8 = list.removeOnSpecificIndex(2);
+        int removeOnIndex9 = list.removeOnSpecificIndex(1);
+        int removeOnIndex11 = list.removeOnSpecificIndex(1);
+        int removeOnIndex12 = list.removeOnSpecificIndex(0);
+        int removeOnIndex6 = list.removeOnSpecificIndex(1);
+        list.addElementOnIndex(0, 0);
+        list.addElementOnIndex(2, 10);
+        list.addElementOnIndex(4, 11);
+        list.addElementOnIndex(6, 12);
+        list.addElementOnIndex(3, 11);
+        list.addElementOnIndex(9, 111111);
 
         for (int num : list) {
             System.out.println(num);
