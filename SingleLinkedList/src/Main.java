@@ -93,10 +93,27 @@ public class Main {
         list.addElementOnIndex(6, 12);
         list.addElementOnIndex(3, 11);
         list.addElementOnIndex(9, 111111);
+        list.add(5);
+        list.add(4);
+        list.add(3);
+        list.add(2);
+        list.addEnd(6);
+        list.addElementOnIndex(0, 1);
+        list.addElementOnIndex(3, 10);
+        list.addElementOnIndex(6, 11);
+        list.addElementOnIndex(8, 1111111);
+        int removeNum = list.removeFirstElement();
+        int removeLast9 = list.removeLastElement();
+        int removeNumOnIndex = list.removeOnSpecificIndex(3);
+        int removeNumOnIndex1 = list.removeOnSpecificIndex(0);
+        int removeNumOnIndex2 = list.removeOnSpecificIndex(3);
+        int removeNumOnIndex3 = list.removeOnSpecificIndex(3);
+        int setElement = list.set(2, 1000);
 
         for (int num : list) {
             System.out.println(num);
         }
+        
         System.out.println(list.count); //count
     }
 }
