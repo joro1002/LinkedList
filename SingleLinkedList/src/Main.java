@@ -109,11 +109,14 @@ public class Main {
         int removeNumOnIndex2 = list.removeOnSpecificIndex(3);
         int removeNumOnIndex3 = list.removeOnSpecificIndex(3);
         int setElement = list.set(2, 1000);
+        int getElement = list.get(2);
+        int getElement1 = list.get(0);
+        int getElement2 = list.get(4);
+        int getElement3 = list.get(-1);
+        int getElement4 = list.get(5);
 
         for (int num : list) {
             System.out.println(num);
         }
-        
-        System.out.println(list.count); //count
     }
 }

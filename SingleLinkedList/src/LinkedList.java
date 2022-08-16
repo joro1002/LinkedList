@@ -3,7 +3,7 @@ import java.util.NoSuchElementException;
 
 public class LinkedList<T> implements Iterable<T> {
     private Node<T> head;
-    public int count;
+    private int count;
 
     static class Node<T> {
         private Node<T> next;
@@ -126,6 +126,17 @@ public class LinkedList<T> implements Iterable<T> {
         current.data = data;
 
         return oldData;
+    }
+
+    public T get(int index) {
+        incorrectIndex(index);
+
+        Node<T> current = head;
+
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current.data;
     }
 
     public void incorrectIndex(int index) {
